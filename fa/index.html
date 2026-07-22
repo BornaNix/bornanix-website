@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BornaNix | Coming Soon</title>
+  <title>برنا نیکس | به‌زودی</title>
 
-  <meta name="description"
-    content="BornaNix is building modern, reliable, and intelligent digital solutions. Our website is coming soon." />
+  <meta name="description" content="برنا نیکس در حال ساخت راهکارهای نرم‌افزاری مدرن، قابل اعتماد و هوشمند است. وب‌سایت رسمی ما به‌زودی راه‌اندازی می‌شود." />
   <meta name="theme-color" content="#0f172a" />
 
-  <meta property="og:title" content="BornaNix | Coming Soon" />
-  <meta property="og:description" content="Modern digital solutions are coming soon from BornaNix." />
+  <meta property="og:title" content="برنا نیکس | به‌زودی" />
+  <meta property="og:description" content="راهکارهای نرم‌افزاری مدرن و هوشمند به‌زودی از BornaNix." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://bornanix.com" />
+  <meta property="og:url" content="https://bornanix.com/fa/" />
 
-  <link rel="canonical" href="https://bornanix.com" />
+  <link rel="canonical" href="https://bornanix.com/fa/" />
   <link rel="alternate" hreflang="en" href="https://bornanix.com/en/" />
   <link rel="alternate" hreflang="fa" href="https://bornanix.com/fa/" />
   <link rel="alternate" hreflang="x-default" href="https://bornanix.com/" />
@@ -24,14 +22,11 @@
   <style>
     :root {
       --bg-dark: #020617;
-      --bg-primary: #0f172a;
       --cyan: #22d3ee;
-      --blue: #3b82f6;
       --purple: #8b5cf6;
       --pink: #ec4899;
       --text-main: #f8fafc;
       --text-muted: #cbd5e1;
-      --glass: rgba(15, 23, 42, 0.62);
       --glass-border: rgba(255, 255, 255, 0.16);
     }
 
@@ -41,13 +36,9 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Tahoma, "Segoe UI", Arial, sans-serif;
       color: var(--text-main);
       background:
         radial-gradient(circle at 15% 15%, rgba(34, 211, 238, 0.22), transparent 28%),
@@ -90,7 +81,6 @@
       left: 8%;
       top: 18%;
       background: radial-gradient(circle, rgba(34, 211, 238, 0.7), transparent 68%);
-      animation-delay: 0s;
     }
 
     .orb.two {
@@ -112,12 +102,9 @@
     }
 
     @keyframes float {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translate3d(0, 0, 0) scale(1);
       }
-
       50% {
         transform: translate3d(0, -28px, 0) scale(1.06);
       }
@@ -155,34 +142,6 @@
       justify-content: center;
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(120deg, transparent, rgba(34, 211, 238, 0.28), transparent, rgba(139, 92, 246, 0.22), transparent);
-      transform: translateX(-70%);
-      animation: shine 7s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    @keyframes shine {
-
-      0%,
-      35% {
-        transform: translateX(-80%);
-      }
-
-      70%,
-      100% {
-        transform: translateX(80%);
-      }
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-    }
-
     .badge {
       display: inline-flex;
       align-items: center;
@@ -194,7 +153,7 @@
       background: rgba(34, 211, 238, 0.08);
       color: #a5f3fc;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 24px;
     }
 
@@ -208,13 +167,10 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: scale(1);
         opacity: 1;
       }
-
       50% {
         transform: scale(0.82);
         opacity: 0.75;
@@ -223,10 +179,12 @@
 
     .brand {
       font-size: clamp(48px, 8vw, 86px);
-      line-height: 0.92;
-      letter-spacing: -0.065em;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
       font-weight: 900;
       margin-bottom: 18px;
+      direction: ltr;
+      text-align: right;
     }
 
     .brand span {
@@ -239,12 +197,9 @@
     }
 
     @keyframes gradientMove {
-
-      0%,
-      100% {
+      0%, 100% {
         background-position: 0% 50%;
       }
-
       50% {
         background-position: 100% 50%;
       }
@@ -252,9 +207,9 @@
 
     .headline {
       font-size: clamp(24px, 3vw, 36px);
-      line-height: 1.15;
-      letter-spacing: -0.035em;
-      font-weight: 800;
+      line-height: 1.45;
+      letter-spacing: -0.025em;
+      font-weight: 900;
       margin-bottom: 18px;
       max-width: 720px;
     }
@@ -262,7 +217,7 @@
     .description {
       color: var(--text-muted);
       font-size: 17px;
-      line-height: 1.8;
+      line-height: 2;
       max-width: 640px;
       margin-bottom: 32px;
     }
@@ -285,7 +240,6 @@
       font-size: 15px;
       font-weight: 800;
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      will-change: transform;
     }
 
     .btn-primary {
@@ -304,14 +258,6 @@
       transform: translateY(-3px);
     }
 
-    .btn-primary:hover {
-      box-shadow: 0 22px 48px rgba(139, 92, 246, 0.28);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(103, 232, 249, 0.38);
-    }
-
     .info-card {
       padding: 28px;
       min-height: 520px;
@@ -323,7 +269,7 @@
       background:
         radial-gradient(circle at 30% 35%, rgba(34, 211, 238, 0.45), transparent 28%),
         radial-gradient(circle at 70% 45%, rgba(139, 92, 246, 0.45), transparent 30%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
       border: 1px solid rgba(255, 255, 255, 0.12);
       position: relative;
       overflow: hidden;
@@ -333,7 +279,7 @@
     .ring {
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255,255,255,0.18);
       animation: rotate 12s linear infinite;
     }
 
@@ -392,12 +338,9 @@
     }
 
     @keyframes breathe {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translate(-50%, -50%) scale(1) rotate(0deg);
       }
-
       50% {
         transform: translate(-50%, -50%) scale(1.09) rotate(8deg);
       }
@@ -408,12 +351,12 @@
       border-radius: 18px;
       padding: 12px 14px;
       background: rgba(2, 6, 23, 0.58);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255,255,255,0.14);
       backdrop-filter: blur(14px);
       color: #e2e8f0;
       font-size: 13px;
       font-weight: 700;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
       animation: miniFloat 4.5s ease-in-out infinite;
     }
 
@@ -435,12 +378,9 @@
     }
 
     @keyframes miniFloat {
-
-      0%,
-      100% {
+      0%, 100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-10px);
       }
@@ -480,7 +420,7 @@
 
     .feature p {
       font-size: 13.5px;
-      line-height: 1.6;
+      line-height: 1.8;
       color: var(--text-muted);
     }
 
@@ -488,16 +428,15 @@
       margin-top: 30px;
       color: #94a3b8;
       font-size: 13px;
+      line-height: 1.8;
     }
 
     .footer a {
       color: #67e8f9;
       text-decoration: none;
       font-weight: 700;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
+      direction: ltr;
+      display: inline-block;
     }
 
     @media (max-width: 900px) {
@@ -529,7 +468,7 @@
       }
 
       .headline {
-        font-size: 26px;
+        font-size: 25px;
       }
 
       .description {
@@ -548,21 +487,14 @@
       .visual {
         height: 230px;
       }
-
-      .mini-card {
-        font-size: 12px;
-        padding: 10px 11px;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-
       *,
       *::before,
       *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -578,7 +510,7 @@
       <div class="content">
         <div class="badge">
           <span class="badge-dot"></span>
-          Website is launching soon
+          وب‌سایت رسمی به‌زودی راه‌اندازی می‌شود
         </div>
 
         <h1 class="brand">
@@ -586,42 +518,43 @@
         </h1>
 
         <h2 class="headline">
-          Building modern, reliable and intelligent digital solutions.
+          ساخت راهکارهای نرم‌افزاری مدرن، قابل اعتماد و هوشمند
         </h2>
 
         <p class="description">
-          We are crafting a new digital experience for BornaNix.
-          Our official website is on the way with more details about our products,
-          services and technology vision.
+          برنا نیکس در حال آماده‌سازی تجربه‌ای تازه برای معرفی محصولات، خدمات و چشم‌انداز فناوری خود است.
+          به‌زودی با وب‌سایتی حرفه‌ای‌تر، سریع‌تر و کامل‌تر در کنار شما خواهیم بود.
         </p>
 
         <div class="actions">
           <a class="btn btn-primary" href="mailto:info@bornanix.com">
-            Contact us
-            <span>→</span>
+            ارتباط با ما
+            <span>←</span>
           </a>
-          <a class="btn btn-secondary" href="/fa/" aria-label="Persian version">
-            فارسی
+
+          <a class="btn btn-secondary" href="/en/" aria-label="English version">
+            English
           </a>
-          <a class="btn btn-secondary" href="https://bornanix.com" aria-label="BornaNix official website">
+
+          <a class="btn btn-secondary" href="https://bornanix.com">
             bornanix.com
           </a>
         </div>
 
         <div class="footer">
-          Email:
+          ایمیل:
           <a href="mailto:info@bornanix.com">info@bornanix.com</a>
           <br />
-          © <span id="year"></span> BornaNix. All rights reserved.
+          © <span id="year"></span> BornaNix. تمامی حقوق محفوظ است.
         </div>
       </div>
     </section>
 
     <aside class="info-card" aria-label="BornaNix technology highlights">
       <div class="visual">
-        <div class="mini-card a">Cloud Ready</div>
-        <div class="mini-card b">Secure by Design</div>
-        <div class="mini-card c">Smart Software</div>
+        <div class="mini-card a">آماده برای Cloud</div>
+        <div class="mini-card b">امنیت‌محور</div>
+        <div class="mini-card c">نرم‌افزار هوشمند</div>
 
         <div class="ring one"></div>
         <div class="ring two"></div>
@@ -633,9 +566,9 @@
         <div class="feature">
           <div class="feature-icon">⚡</div>
           <div>
-            <h3>Fast & Scalable</h3>
+            <h3>سریع و مقیاس‌پذیر</h3>
             <p>
-              Designed for performance, growth and stable digital operations.
+              طراحی‌شده برای رشد، پایداری و عملکرد قابل اتکا در مسیر توسعه کسب‌وکار.
             </p>
           </div>
         </div>
@@ -643,9 +576,9 @@
         <div class="feature">
           <div class="feature-icon">🛡️</div>
           <div>
-            <h3>Reliable Infrastructure</h3>
+            <h3>زیرساخت قابل اعتماد</h3>
             <p>
-              Built on modern cloud foundations with secure delivery in mind.
+              مبتنی بر رویکردهای مدرن برای ارائه امن، پایدار و حرفه‌ای خدمات دیجیتال.
             </p>
           </div>
         </div>
@@ -653,9 +586,9 @@
         <div class="feature">
           <div class="feature-icon">✨</div>
           <div>
-            <h3>Clean Digital Experience</h3>
+            <h3>تجربه دیجیتال تمیز</h3>
             <p>
-              Simple, elegant and user-focused solutions for real business needs.
+              ساده، زیبا و کاربردی؛ با تمرکز روی نیازهای واقعی کاربران و کسب‌وکارها.
             </p>
           </div>
         </div>
@@ -667,5 +600,4 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
-
 </html>
