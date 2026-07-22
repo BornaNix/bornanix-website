@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>BornaNix | Coming Soon</title>
-  <meta name="description" content="BornaNix is building modern software solutions for healthcare and business systems." />
+
+  <meta name="description" content="BornaNix is building modern, reliable, and intelligent digital solutions. Our website is coming soon." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <meta property="og:title" content="BornaNix | Coming Soon" />
+  <meta property="og:description" content="Modern digital solutions are coming soon from BornaNix." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bornanix.com" />
+
+  <link rel="canonical" href="https://bornanix.com" />
 
   <style>
     :root {
-      --bg-1: #07111f;
-      --bg-2: #0d233d;
-      --accent: #36d1dc;
-      --accent-2: #5b86e5;
-      --text: #ffffff;
-      --muted: #b7c4d6;
-      --card: rgba(255, 255, 255, 0.08);
-      --border: rgba(255, 255, 255, 0.14);
+      --bg-dark: #020617;
+      --bg-primary: #0f172a;
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+      --pink: #ec4899;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --glass: rgba(15, 23, 42, 0.62);
+      --glass-border: rgba(255, 255, 255, 0.16);
     }
 
     * {
@@ -24,154 +36,508 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
       background:
-        radial-gradient(circle at top left, rgba(54, 209, 220, 0.24), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(91, 134, 229, 0.28), transparent 34%),
-        linear-gradient(135deg, var(--bg-1), var(--bg-2));
-      color: var(--text);
+        radial-gradient(circle at 15% 15%, rgba(34, 211, 238, 0.22), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(139, 92, 246, 0.25), transparent 30%),
+        radial-gradient(circle at 50% 85%, rgba(236, 72, 153, 0.18), transparent 32%),
+        linear-gradient(135deg, #020617 0%, #0f172a 46%, #111827 100%);
+      overflow-x: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
-      overflow: hidden;
+      padding: 32px 18px;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(circle at center, black, transparent 75%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb {
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(8px);
+      opacity: 0.75;
+      z-index: 0;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 170px;
+      height: 170px;
+      left: 8%;
+      top: 18%;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.7), transparent 68%);
+      animation-delay: 0s;
+    }
+
+    .orb.two {
+      width: 230px;
+      height: 230px;
+      right: 7%;
+      top: 16%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.65), transparent 70%);
+      animation-delay: 1.5s;
+    }
+
+    .orb.three {
+      width: 190px;
+      height: 190px;
+      left: 18%;
+      bottom: 11%;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.55), transparent 70%);
+      animation-delay: 3s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(0, -28px, 0) scale(1.06);
+      }
     }
 
     .page {
-      width: 100%;
-      max-width: 980px;
+      width: min(1040px, 100%);
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 56px 48px;
-      backdrop-filter: blur(18px);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
-      text-align: center;
+    .hero-card,
+    .info-card {
+      position: relative;
+      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.42));
+      box-shadow:
+        0 28px 90px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .hero-card {
+      padding: 48px;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(120deg, transparent, rgba(34, 211, 238, 0.28), transparent, rgba(139, 92, 246, 0.22), transparent);
+      transform: translateX(-70%);
+      animation: shine 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shine {
+      0%, 35% {
+        transform: translateX(-80%);
+      }
+      70%, 100% {
+        transform: translateX(80%);
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 14px;
       border-radius: 999px;
-      background: rgba(54, 209, 220, 0.12);
-      border: 1px solid rgba(54, 209, 220, 0.28);
-      color: #dffcff;
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      background: rgba(34, 211, 238, 0.08);
+      color: #a5f3fc;
       font-size: 14px;
-      margin-bottom: 28px;
+      font-weight: 600;
+      margin-bottom: 24px;
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
+    .badge-dot {
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 18px var(--accent);
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.16);
+      animation: pulse 1.8s ease-in-out infinite;
     }
 
-    h1 {
-      font-size: clamp(48px, 9vw, 96px);
-      line-height: 1;
-      letter-spacing: -4px;
-      margin-bottom: 22px;
-      background: linear-gradient(90deg, #ffffff, #c9faff, #a8bfff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(0.82);
+        opacity: 0.75;
+      }
     }
 
-    .subtitle {
-      font-size: clamp(18px, 2.4vw, 26px);
-      color: var(--muted);
-      line-height: 1.6;
-      max-width: 720px;
-      margin: 0 auto 34px;
-    }
-
-    .brand-line {
-      width: 120px;
-      height: 4px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      margin: 0 auto 34px;
-    }
-
-    .coming {
-      font-size: clamp(28px, 5vw, 54px);
-      font-weight: 700;
-      letter-spacing: -1px;
+    .brand {
+      font-size: clamp(48px, 8vw, 86px);
+      line-height: 0.92;
+      letter-spacing: -0.065em;
+      font-weight: 900;
       margin-bottom: 18px;
     }
 
-    .desc {
-      color: var(--muted);
+    .brand span {
+      background: linear-gradient(90deg, #f8fafc, #67e8f9, #a78bfa, #f0abfc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 220% 100%;
+      animation: gradientMove 5.8s ease-in-out infinite;
+    }
+
+    @keyframes gradientMove {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .headline {
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+      margin-bottom: 18px;
+      max-width: 720px;
+    }
+
+    .description {
+      color: var(--text-muted);
       font-size: 17px;
       line-height: 1.8;
-      max-width: 680px;
-      margin: 0 auto;
+      max-width: 640px;
+      margin-bottom: 32px;
     }
 
-    .footer {
-      margin-top: 34px;
-      color: rgba(255, 255, 255, 0.58);
-      font-size: 14px;
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
     }
 
-    .orb {
-      position: fixed;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      border-radius: 16px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      will-change: transform;
+    }
+
+    .btn-primary {
+      color: #020617;
+      background: linear-gradient(135deg, #67e8f9, #a78bfa);
+      box-shadow: 0 18px 38px rgba(34, 211, 238, 0.22);
+    }
+
+    .btn-secondary {
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 22px 48px rgba(139, 92, 246, 0.28);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(103, 232, 249, 0.38);
+    }
+
+    .info-card {
+      padding: 28px;
+      min-height: 520px;
+    }
+
+    .visual {
+      height: 260px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 30% 35%, rgba(34, 211, 238, 0.45), transparent 28%),
+        radial-gradient(circle at 70% 45%, rgba(139, 92, 246, 0.45), transparent 30%),
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .ring {
+      position: absolute;
       border-radius: 50%;
-      filter: blur(2px);
-      opacity: 0.55;
-      z-index: 1;
-      animation: float 8s ease-in-out infinite;
+      border: 1px solid rgba(255,255,255,0.18);
+      animation: rotate 12s linear infinite;
     }
 
-    .orb.one {
-      width: 160px;
-      height: 160px;
-      background: rgba(54, 209, 220, 0.16);
-      top: 12%;
-      left: 10%;
+    .ring.one {
+      width: 190px;
+      height: 190px;
+      left: 50%;
+      top: 50%;
+      margin-left: -95px;
+      margin-top: -95px;
+      border-top-color: rgba(103, 232, 249, 0.9);
     }
 
-    .orb.two {
-      width: 220px;
-      height: 220px;
-      background: rgba(91, 134, 229, 0.14);
-      bottom: 9%;
-      right: 8%;
-      animation-delay: 1.5s;
+    .ring.two {
+      width: 130px;
+      height: 130px;
+      left: 50%;
+      top: 50%;
+      margin-left: -65px;
+      margin-top: -65px;
+      border-right-color: rgba(167, 139, 250, 0.9);
+      animation-direction: reverse;
+      animation-duration: 8s;
     }
 
-    @keyframes float {
+    .ring.three {
+      width: 74px;
+      height: 74px;
+      left: 50%;
+      top: 50%;
+      margin-left: -37px;
+      margin-top: -37px;
+      border-bottom-color: rgba(244, 114, 182, 0.9);
+      animation-duration: 5.8s;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 54px;
+      height: 54px;
+      transform: translate(-50%, -50%);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #67e8f9, #8b5cf6);
+      box-shadow:
+        0 0 40px rgba(34, 211, 238, 0.42),
+        0 0 80px rgba(139, 92, 246, 0.26);
+      animation: breathe 2.4s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.09) rotate(8deg);
+      }
+    }
+
+    .mini-card {
+      position: absolute;
+      border-radius: 18px;
+      padding: 12px 14px;
+      background: rgba(2, 6, 23, 0.58);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(14px);
+      color: #e2e8f0;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+      animation: miniFloat 4.5s ease-in-out infinite;
+    }
+
+    .mini-card.a {
+      left: 18px;
+      top: 22px;
+    }
+
+    .mini-card.b {
+      right: 18px;
+      top: 62px;
+      animation-delay: 1s;
+    }
+
+    .mini-card.c {
+      left: 42px;
+      bottom: 24px;
+      animation-delay: 2s;
+    }
+
+    @keyframes miniFloat {
       0%, 100% {
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-18px);
+        transform: translateY(-10px);
       }
     }
 
-    @media (max-width: 640px) {
-      .card {
-        padding: 40px 24px;
-        border-radius: 22px;
+    .features {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 15px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .feature-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: rgba(34, 211, 238, 0.11);
+      border: 1px solid rgba(34, 211, 238, 0.18);
+    }
+
+    .feature h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .feature p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .footer {
+      margin-top: 30px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: #67e8f9;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        align-items: flex-start;
       }
 
-      h1 {
-        letter-spacing: -2px;
+      .page {
+        grid-template-columns: 1fr;
       }
 
-      .subtitle {
-        font-size: 17px;
+      .hero-card,
+      .info-card {
+        min-height: auto;
+      }
+
+      .hero-card {
+        padding: 36px 24px;
+      }
+
+      .info-card {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .brand {
+        font-size: 54px;
+      }
+
+      .headline {
+        font-size: 26px;
+      }
+
+      .description {
+        font-size: 15.5px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .visual {
+        height: 230px;
+      }
+
+      .mini-card {
+        font-size: 12px;
+        padding: 10px 11px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -180,33 +546,98 @@
 <body>
   <div class="orb one"></div>
   <div class="orb two"></div>
+  <div class="orb three"></div>
 
   <main class="page">
-    <section class="card">
-      <div class="badge">
-        <span class="dot"></span>
-        Official website
-      </div>
+    <section class="hero-card" aria-label="BornaNix coming soon">
+      <div class="content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Website is launching soon
+        </div>
 
-      <h1>BornaNix</h1>
+        <h1 class="brand">
+          <span>BornaNix</span>
+        </h1>
 
-      <p class="subtitle">
-        Modern software solutions for healthcare, business systems, and digital transformation.
-      </p>
+        <h2 class="headline">
+          Building modern, reliable and intelligent digital solutions.
+        </h2>
 
-      <div class="brand-line"></div>
+        <p class="description">
+          We are crafting a new digital experience for BornaNix.
+          Our official website is on the way with more details about our products,
+          services and technology vision.
+        </p>
 
-      <div class="coming">Coming Soon</div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:info@bornanix.com">
+            Contact us
+            <span>→</span>
+          </a>
 
-      <p class="desc">
-        We are preparing something reliable, scalable, and beautifully engineered.
-        Our official website will be available soon.
-      </p>
+          <a class="btn btn-secondary" href="https://bornanix.com" aria-label="BornaNix official website">
+            bornanix.com
+          </a>
+        </div>
 
-      <div class="footer">
-        © 2026 BornaNix. All rights reserved.
+        <div class="footer">
+          Email:
+          <a href="mailto:info@bornanix.com">info@bornanix.com</a>
+          <br />
+          © <span id="year"></span> BornaNix. All rights reserved.
+        </div>
       </div>
     </section>
+
+    <aside class="info-card" aria-label="BornaNix technology highlights">
+      <div class="visual">
+        <div class="mini-card a">Cloud Ready</div>
+        <div class="mini-card b">Secure by Design</div>
+        <div class="mini-card c">Smart Software</div>
+
+        <div class="ring one"></div>
+        <div class="ring two"></div>
+        <div class="ring three"></div>
+        <div class="core"></div>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <div>
+            <h3>Fast & Scalable</h3>
+            <p>
+              Designed for performance, growth and stable digital operations.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🛡️</div>
+          <div>
+            <h3>Reliable Infrastructure</h3>
+            <p>
+              Built on modern cloud foundations with secure delivery in mind.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✨</div>
+          <div>
+            <h3>Clean Digital Experience</h3>
+            <p>
+              Simple, elegant and user-focused solutions for real business needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
