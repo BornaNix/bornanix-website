@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bornanix | Coming Soon</title>
+  <meta name="description" content="Bornanix is building modern software solutions for healthcare and business systems." />
+
+  <style>
+    :root {
+      --bg-1: #07111f;
+      --bg-2: #0d233d;
+      --accent: #36d1dc;
+      --accent-2: #5b86e5;
+      --text: #ffffff;
+      --muted: #b7c4d6;
+      --card: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(54, 209, 220, 0.24), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(91, 134, 229, 0.28), transparent 34%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 980px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 56px 48px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(54, 209, 220, 0.12);
+      border: 1px solid rgba(54, 209, 220, 0.28);
+      color: #dffcff;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(48px, 9vw, 96px);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 22px;
+      background: linear-gradient(90deg, #ffffff, #c9faff, #a8bfff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2.4vw, 26px);
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 720px;
+      margin: 0 auto 34px;
+    }
+
+    .brand-line {
+      width: 120px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      margin: 0 auto 34px;
+    }
+
+    .coming {
+      font-size: clamp(28px, 5vw, 54px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer {
+      margin-top: 34px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 14px;
+    }
+
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: 0.55;
+      z-index: 1;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 160px;
+      height: 160px;
+      background: rgba(54, 209, 220, 0.16);
+      top: 12%;
+      left: 10%;
+    }
+
+    .orb.two {
+      width: 220px;
+      height: 220px;
+      background: rgba(91, 134, 229, 0.14);
+      bottom: 9%;
+      right: 8%;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-18px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 40px 24px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <main class="page">
+    <section class="card">
+      <div class="badge">
+        <span class="dot"></span>
+        Official website
+      </div>
+
+      <h1>Bornanix</h1>
+
+      <p class="subtitle">
+        Modern software solutions for healthcare, business systems, and digital transformation.
+      </p>
+
+      <div class="brand-line"></div>
+
+      <div class="coming">Coming Soon</div>
+
+      <p class="desc">
+        We are preparing something reliable, scalable, and beautifully engineered.
+        Our official website will be available soon.
+      </p>
+
+      <div class="footer">
+        © 2026 Bornanix. All rights reserved.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
