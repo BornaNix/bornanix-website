@@ -111,15 +111,27 @@
     }
 
     .brand {
-      font-size: 48px;
+      font-family: 'Inter', sans-serif;
+      /* فونت مخصوص برند */
+      font-size: clamp(48px, 8vw, 86px);
+      line-height: 1;
+      /* بهتره برای برند ۱ باشه */
       font-weight: 900;
-      letter-spacing: -0.05em;
-      margin-bottom: 12px;
-      background: linear-gradient(90deg, #f8fafc, var(--cyan), var(--purple));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      margin-bottom: 0.5rem;
+      position: relative;
+      display: inline-block;
+      direction: ltr;
+      /* برای انگلیسی */
+      text-align: right;
+
+      /* حل مشکل چسبندگی حروف */
+      letter-spacing: -0.01em;
+      /* فاصله رو از منفی ۰.۰۴ به منفی ۰.۰۱ تغییر دادم */
+      font-variant-ligatures: none;
+      font-feature-settings: "liga" 0, "calt" 0;
+      text-rendering: optimizeLegibility;
     }
+
 
     p {
       color: var(--muted);
