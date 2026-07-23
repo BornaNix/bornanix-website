@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bornanix.com/sitemap.xml
