@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +14,8 @@
   <link rel="alternate" hreflang="en" href="https://bornanix.com/en/" />
   <link rel="alternate" hreflang="fa" href="https://bornanix.com/fa/" />
   <link rel="alternate" hreflang="x-default" href="https://bornanix.com/" />
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+  <link rel="shortcut icon" href="/favicon.svg?v=3" />
 
   <script>
     (function () {
@@ -36,10 +39,10 @@
       var isPersian =
         normalizedLanguages.some(function (lang) {
           return lang === "fa" ||
-                 lang.startsWith("fa-") ||
-                 lang === "fa-ir" ||
-                 lang === "prs" ||
-                 lang === "ps";
+            lang.startsWith("fa-") ||
+            lang === "fa-ir" ||
+            lang === "prs" ||
+            lang === "ps";
         });
 
       if (isPersian) {
@@ -113,7 +116,7 @@
       height: 48px;
       margin: 0 auto 22px;
       border-radius: 50%;
-      border: 3px solid rgba(255,255,255,0.14);
+      border: 3px solid rgba(255, 255, 255, 0.14);
       border-top-color: var(--cyan);
       animation: spin 0.9s linear infinite;
     }
@@ -171,4 +174,5 @@
     </div>
   </main>
 </body>
+
 </html>
